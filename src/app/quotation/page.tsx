@@ -1,3 +1,4 @@
+import { QuotationDetails } from "@/components/quotation-details/quotation-details";
 import { QuotationManagement } from "@/components/quotation/quotation-management";
 import { orderDetails } from "@/data/orders";
 
@@ -12,7 +13,7 @@ export const quotation =
   clientEmail: "john.smith@example.com",
   taxId: "1234567890123",
   billToAddress: {
-    street1: "123 Sukhumvit Road",
+    street1: "123",
     street2: "Building A, Floor 10",
     district: "Khlong Toei",
     province: "Bangkok",
@@ -30,10 +31,103 @@ export const quotation =
     branchCode: "สำนักงานใหญ่",
   },
 };
+const mockQuotation = {
+  id: "1",
+  title: "Website Development Project ",
+  clientName: "Acme Corporation",
+  clientPhoneNumber: "0099999999",
+  clientEmail: "0099999999",
+  status: "Pending",
+  amount: 15000,
+  currency: "USD",
+  taxId: "123123123",
+  createdAt: "2024-01-15",
+  expiredAt: "2024-09-15",
+
+  validUntil: "2024-02-15",
+  description: "Complete website development including design, development, and deployment.",
+  billToAddress: {
+    street1: "123 ",
+    street2: "Building A, Floor 10",
+    district: "Khlong Toei ",
+    province: "Bangkok",
+    postalCode: "10110",
+    country: "ThailandCorporation",
+    branchCode: "001",
+  },
+  shipToAddress: {
+    street1: "456 Rama IV Road",
+    street2: "Warehouse Zone 5",
+    district: "Pathumwan",
+    province: "Bangkok",
+    postalCode: "10330",
+    country: "Thailand",
+    branchCode: "สำนักงานใหญ่",
+  },
+  items: [
+    {
+      id: 1,
+      productNo: "P001",
+      productDescription: "Toyota Camry 2.5L",
+      quantity: 2,
+      UOM: "pcs",
+      unitPrice: "35000",
+      amount: "70000",
+      discount: "5000",
+      totalAmount: "65000",
+    },
+    {
+      id: 2,
+      productNo: "P002",
+      productDescription: "Honda Civic 1.8L",
+      quantity: 1,
+      UOM: "pcs",
+      unitPrice: "25000",
+      amount: "25000",
+      discount: "2000",
+      totalAmount: "23000",
+    },
+    {
+      id: 3,
+      productNo: "P003",
+      productDescription: "Mazda CX-5 2.0L",
+      quantity: 3,
+      UOM: "pcs",
+      unitPrice: "30000",
+      amount: "90000",
+      discount: "7000",
+      totalAmount: "83000",
+    },
+    {
+      id: 4,
+      productNo: "P004",
+      productDescription: "Ford Ranger Wildtrak 2.0L",
+      quantity: 2,
+      UOM: "pcs",
+      unitPrice: "45000",
+      amount: "90000",
+      discount: "10000",
+      totalAmount: "80000",
+    },
+    {
+      id: 5,
+      productNo: "P005",
+      productDescription: "Hyundai Tucson 2.0L",
+      quantity: 4,
+      UOM: "pcs",
+      unitPrice: "28000",
+      amount: "112000",
+      discount: "12000",
+      totalAmount: "100000",
+    },
+  ],
+};
 export default function Quotation() {
   return (
     <div className=" max-w-full mt-20 px-10 mx-auto">
       <QuotationManagement quotation={quotation} data={orderDetails} />
+      <br />
+      <QuotationDetails quotation={mockQuotation} />
 
     </div>
   )
