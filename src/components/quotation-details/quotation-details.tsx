@@ -19,9 +19,11 @@ export const QuotationDetails: FC<QuotationDetailsProps> = ({ quotation }) => {
   const netAmount = totalAmount + totalAmount * (VATpercents / 100);
   return (
     <div className="flex flex-col gap-5">
+      {/* header */}
       <QuotationDetailsHeader quotation={quotation} />
+      {/* billing */}
       <div className="flex flex-col gap-5">
-        <div className="grid grid-cols-[minmax(200px,500px)_repeat(3,1fr)]">
+        <div className="grid grid-cols-[2fr_repeat(3,1fr)]">
           <div className="grid grid-cols-2 gap-x-2">
             <p className="font-bold">Bill To</p>
             <p className="justify-self-start">{quotation.clientName}</p>
@@ -39,7 +41,7 @@ export const QuotationDetails: FC<QuotationDetailsProps> = ({ quotation }) => {
             <p className="justify-self-start">{quotation.clientEmail}</p>
           </div>
         </div>
-        <div className="  grid grid-cols-[minmax(200px,500px)_repeat(3,1fr)]">
+        <div className="  grid grid-cols-[2fr_repeat(3,1fr)]">
           <div className="grid grid-cols-2 gap-x-2">
             <div className=" flex justify-between">
               <p className=" font-bold">Billing Address</p>
@@ -60,7 +62,7 @@ export const QuotationDetails: FC<QuotationDetailsProps> = ({ quotation }) => {
             <p className="justify-self-start">{quotation.billToAddress.branchCode}</p>
           </div>
         </div>
-        <div className="  grid grid-cols-[minmax(200px,500px)_repeat(3,1fr)]">
+        <div className="  grid grid-cols-[2fr_repeat(3,1fr)]">
           <div className="grid grid-cols-2 gap-x-2">
             <p className="font-bold justify-self-end">Street 2:</p>
             <p className="justify-self-start">{quotation.billToAddress.street2}</p>
@@ -77,8 +79,11 @@ export const QuotationDetails: FC<QuotationDetailsProps> = ({ quotation }) => {
         </div>
         <hr className="mt-2 h-0.5 bg-black" />
       </div>
+
+
+      {/* shipping */}
       <div className="flex flex-col gap-5">
-        <div className="grid grid-cols-[minmax(200px,500px)_repeat(3,1fr)]">
+        <div className="grid grid-cols-[2fr_repeat(3,1fr)]">
           <div className="grid grid-cols-2 ">
             <p className="font-bold">Ship To</p>
             <p className="justify-self-start">{quotation.clientName}</p>
@@ -88,7 +93,7 @@ export const QuotationDetails: FC<QuotationDetailsProps> = ({ quotation }) => {
             <p className="justify-self-start">{quotation.clientPhoneNumber}</p>
           </div>
         </div>
-        <div className=" grid grid-cols-[minmax(200px,500px)_repeat(3,1fr)]">
+        <div className=" grid grid-cols-[2fr_repeat(3,1fr)]">
           <div className="grid grid-cols-2 gap-x-2">
             <div className="flex justify-between">
               <p className="font-bold">Shipping Address</p>
@@ -109,14 +114,14 @@ export const QuotationDetails: FC<QuotationDetailsProps> = ({ quotation }) => {
             <p className="justify-self-start">{quotation.shipToAddress.branchCode}</p>
           </div>
         </div>
-        <div className="  grid grid-cols-[minmax(200px,500px)_repeat(3,1fr)]">
+        <div className="  grid grid-cols-[2fr_repeat(3,1fr)]">
           <div className="grid grid-cols-2 gap-x-2">
             <p className="font-bold justify-self-end">Street 2:</p>
             <p className="justify-self-start">{quotation.shipToAddress.street2}</p>
           </div>
           <div className="grid grid-cols-2 gap-x-2">
             <p className="justify-self-end font-bold">Province/State:</p>
-            <p className="justify-self-start">{quotation.shipToAddress.postalCode}</p>
+            <p className="justify-self-start">{quotation.shipToAddress.province}</p>
           </div>
           <div className="grid grid-cols-2 gap-x-2 ">
             <p className="justify-self-end font-bold">Country:</p>
@@ -126,6 +131,8 @@ export const QuotationDetails: FC<QuotationDetailsProps> = ({ quotation }) => {
         </div>
         <hr className="mt-2 h-0.5 bg-black" />
       </div>
+
+      {/* table */}
       <div>
         <QuotationDetailsTable quotation={quotation} />
       </div>
@@ -142,7 +149,7 @@ export const QuotationDetails: FC<QuotationDetailsProps> = ({ quotation }) => {
               <p className="justify-self-end font-bold">Discount:</p>
               <p className="justify-self-end">{discount} THB</p>
               <p className="justify-self-end font-bold">Total:</p>
-              <p className="justify-self-end">{subtotal} THB</p>
+              <p className="justify-self-end">{totalAmount} THB</p>
               <p className="justify-self-end font-bold">VAT:</p>
               <div className="grid grid-cols-2 gap-x-2">
                 <p className="text-center font-bold">{VATpercents} %</p>

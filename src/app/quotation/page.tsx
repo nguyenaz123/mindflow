@@ -125,7 +125,8 @@ const mockQuotation = {
 export default function Quotation() {
   return (
     <div className=" max-w-full mt-20 px-10 mx-auto">
-      <QuotationManagement quotation={quotation} data={orderDetails} />
+      {/* <QuotationManagement quotation={quotation} data={orderDetails} /> */}
+      <hr className="h-3" />
       <br />
       <QuotationDetails quotation={mockQuotation} />
 
