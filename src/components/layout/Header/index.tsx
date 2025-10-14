@@ -5,7 +5,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import styles from "./Header.module.css";
-import { Dropdown } from "../Dropdown/Dropdown";
+import { AppSidebar } from "../AppSidebar/AppSidebar";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Menu } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,18 +18,15 @@ export default function Header() {
   const pathname = usePathname();
   const [isSearching, setIsSearching] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [size, setSize] = useState(0);
-  useEffect(() => {
-    const handleResize = () => setSize(window.innerWidth);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const [open, setOpen] = useState(false)
+  const [hamburgerClicked, setHamburgerClicked] = useState(false)
 
-  useEffect(() => {
-    setIsMobile(size < 768);
-  }, [size]);
+  const handleClick = ()=>{
+      setOpen(!open)
+      setHamburgerClicked(!hamburgerClicked)
+      console.log(open)
+
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,13 +37,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <nav
-      className={`${styles.header} ${scrolled && !isMobile ? styles.scrolled : ""}`}
-    >
-      {isMobile ? (
-        <Dropdown />
-      ) : (
+    <nav className={`${styles.header} ${scrolled ? styles.scrolled : "" } ${hamburgerClicked ? styles.hamburgerClicked : ""}`}>
+      <div>
         <ul className={styles.navList}>
+
           <div className={styles.leftItems}>
             {navLinks.map((link) => (
               <li
@@ -65,7 +61,22 @@ export default function Header() {
             />
           </li>
         </ul>
-      )}
+        <div className={styles.hamburger}>
+          <button onClick={()=>handleClick()} ><Menu/></button>
+          {open && (
+          <div className={styles.navListMobile}>
+            {navLinks.map((link) => (
+              <li
+                key={link.href}
+                className={styles.liMobile}
+              >
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
+          </div>
+          )}
+        </div>
+      </div>
 
       {isSearching && <Search placeholder="Search blogs..." />}
     </nav>
