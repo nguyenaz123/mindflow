@@ -96,17 +96,19 @@
     }
 
     .navListMobile {
-        background-color: white;
         padding: 0;
-        color: black;
+        color: white;
 
+    }
+
+    .navListMobile li:hover {
+        background-color: lightgray;
     }
 
     .liMobile {
         font-size: x-large;
         padding: 5px 12px;
-
-
+        list-style-type: none
     }
 
 
