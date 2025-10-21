@@ -3,10 +3,11 @@
     top: 0;
     width: 100%;
     background-color: transparent;
-    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, backdrop-filter 0.5s ease-in-out;
     z-index: 1000;
     backdrop-filter: none;
     padding-top: 10px;
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, backdrop-filter 0.5s ease-in-out;
+
 }
 
 .searchIcon {
@@ -57,4 +58,58 @@
 
 .active {
     border-bottom: 3px solid rgb(170, 169, 169);
+}
+
+.headerTitle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .navList {
+        display: none;
+
+    }
+
+    .scrolled {
+        background-color: white;
+    }
+
+    .hamburger button {
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: block;
+        color: black;
+
+    }
+
+    .hamburgerClicked {
+        background-color: white;
+
+    }
+
+    .navListMobile {
+        padding: 0;
+        color: white;
+
+    }
+
+    .navListMobile li:hover {
+        background-color: lightgray;
+    }
+
+    .liMobile {
+        font-size: x-large;
+        padding: 5px 12px;
+        list-style-type: none
+    }
+
+
 }
