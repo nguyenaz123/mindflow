@@ -249,6 +249,49 @@ export type CategoriesDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for fashionItem documents
+ */
+interface FashionitemDocumentData {
+  /**
+   * Image field in *fashionItem*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fashionitem.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *fashionItem*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fashionitem.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * fashionItem document from Prismic
+ *
+ * - **API ID**: `fashionitem`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FashionitemDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<FashionitemDocumentData>,
+    "fashionitem",
+    Lang
+  >;
+
 interface FooterDocumentData {}
 
 /**
@@ -374,6 +417,7 @@ export type AllDocumentTypes =
   | AuthorDocument
   | BlogDocument
   | CategoriesDocument
+  | FashionitemDocument
   | FooterDocument
   | HomepageDocument;
 
@@ -404,6 +448,8 @@ declare module "@prismicio/client" {
       BlogDocumentData,
       CategoriesDocument,
       CategoriesDocumentData,
+      FashionitemDocument,
+      FashionitemDocumentData,
       FooterDocument,
       FooterDocumentData,
       HomepageDocument,
