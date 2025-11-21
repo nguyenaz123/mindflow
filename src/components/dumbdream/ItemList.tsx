@@ -21,16 +21,41 @@ export const ItemList: FC<Props> = ({ dumbDreamItems }) => {
   )
   return (
     <div className='flex flex-col'>
-      {/* <div className="w-screen h-screen overflow-hidden">
-        <iframe
-          className="w-full h-full"
-          src={`https://www.youtube.com/embed/mrHGKmwfNYQ?autoplay=1&mute=1&controls=0&loop=1&playlist=mrHGKmwfNYQ&modestbranding=1&rel=0&iv_load_policy=3`}
-          title="Clean Fullscreen YouTube Video"
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div> */}
+      <div className="relative w-full h-[100vh] overflow-hidden brightness-80">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute top-0 left-0 w-full h-full object-cover xl:object-contain"
+        >
+          <source src="/videos/myVideo.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className="grid md:grid-cols-3 items-center py-3">
+        <h1 className=" text-center
+      text-5xl md:text-7xl font-extrabold
+      uppercase tracking-tight
+      text-white
+      drop-shadow-[0_4px_2px_rgba(0,0,0,0.7)]
+      [text-shadow:_3px_3px_0_#000,6px_6px_0_#ffff]
+      font-['Impact','Anton','Oswald',sans-serif]
+    ">
+          We make the couture
+        </h1>
+        <img src="/images/logo.png" className=" 2xl:w-1/3 justify-self-center" />
+        <h1 className=" text-center
+      text-5xl md:text-7xl font-extrabold
+      uppercase tracking-tight
+      text-white
+      drop-shadow-[0_4px_2px_rgba(0,0,0,0.7)]
+      [text-shadow:_3px_3px_0_#000,6px_6px_0_#ffff]
+      font-['Impact','Anton','Oswald',sans-serif]
+    ">
+          You make the trend
+        </h1>
+      </div>
       <Carousel
         plugins={[plugin.current]}
       >
