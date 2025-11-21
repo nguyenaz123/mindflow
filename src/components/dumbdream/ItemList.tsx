@@ -82,9 +82,9 @@ export const ItemList: FC<Props> = ({ dumbDreamItems }) => {
 
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-3 '>
+      <div className='grid grid-cols-1 md:grid-cols-3 2xl:gap-y-5'>
         {dumbDreamItems.map((dumbDreamItem) => (
-          <div key={dumbDreamItem.uid} className='border-2 border-black '>
+          <div key={dumbDreamItem.uid} className='border-2 border-black justify-items-center'>
             <img src={dumbDreamItem.data?.image?.url || ""} />
           </div>
         ))}
