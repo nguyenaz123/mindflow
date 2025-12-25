@@ -21,6 +21,7 @@ export const ItemList: FC<Props> = ({ dumbDreamItems }) => {
   )
   return (
     <div className='flex flex-col'>
+      <h1 className='text-center text-5xl md:text-7xl font-extrabold uppercase tracking-tight text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.7)] [text-shadow:_3px_3px_0_#000,6px_6px_0_#ffff] font-["Impact","Anton","Oswald",sans-serif]'>Dumb Dream</h1>
       <div className="relative w-full h-[100vh] overflow-hidden brightness-80">
         <video
           autoPlay
