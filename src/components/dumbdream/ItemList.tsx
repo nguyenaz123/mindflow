@@ -1,6 +1,7 @@
 'use client'
 import Autoplay from "embla-carousel-autoplay"
 import Link from 'next/link'
+import { useRouter } from "next/navigation"
 import { FC, useRef } from 'react'
 import { FashionitemDocument } from '../../../prismicio-types'
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel'
@@ -19,6 +20,10 @@ export const ItemList: FC<Props> = ({ dumbDreamItems }) => {
   const plugin = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   )
+  const router = useRouter();
+  const handleOnClick = (item: FashionitemDocument<string>) => {
+    router.push(`/dumbdream/${item.uid}`);
+  }
   return (
     <div className='flex flex-col'>
       <div className="relative w-full h-[100vh] overflow-hidden brightness-80">
@@ -84,8 +89,8 @@ export const ItemList: FC<Props> = ({ dumbDreamItems }) => {
 
       <div className='grid grid-cols-1 md:grid-cols-3 2xl:gap-y-5'>
         {dumbDreamItems.map((dumbDreamItem) => (
-          <div key={dumbDreamItem.uid} className='border-2 border-black justify-items-center'>
-            <img src={dumbDreamItem.data?.image?.url || ""} />
+          <div key={dumbDreamItem.uid} className='border-2 border-black justify-items-center' onClick={() => handleOnClick(dumbDreamItem)}>
+            <img src={dumbDreamItem.data?.image?.url || ""} className="md:h-[1136px] object-cover w-full"/>
           </div>
         ))}
       </div>

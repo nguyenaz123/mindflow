@@ -1,24 +1,20 @@
 "use client";
 import Search from "@/components/commons/Search";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
-import { FaSearch } from "react-icons/fa";
-import styles from "./Header.module.css";
-import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
+  SheetTrigger
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
+import styles from "./Header.module.css";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -26,12 +22,12 @@ const navLinks = [
   { href: "/table", label: "DataTable Shadcn" },
   { href: "/ticket", label: "Ticket" },
   { href: "/react-hook-form", label: "React Form" },
+  { href: "/dumbdream", label: "Dumb Dream" },
 ];
 export default function Header() {
   const pathname = usePathname();
   const [isSearching, setIsSearching] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
@@ -40,33 +36,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <nav className={`${styles.header} ${scrolled ? styles.scrolled : ""} `}>
-      <div>
-        <ul className={styles.navList}>
-          <div className={styles.leftItems}>
-            {navLinks.map((link) => (
-              <li
-                key={link.href}
-                className={`${styles.navItem} ${
-                  pathname === link.href ? styles.active : ""
-                }`}
-              >
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
-          </div>
-
-          <li className={styles.navItem}>
-            <FaSearch
-              className={styles.searchIcon}
-              onClick={() => setIsSearching(!isSearching)}
-            />
-          </li>
-        </ul>
+    <nav >
+      <div className="flex items-center justify-between w-full border-b-2 border-white border-solid ">
         <div className={styles.hamburger}>
           <Sheet>
             <SheetTrigger asChild>
-              <Button className="bg-transparent text-black">
+              <Button className="bg-transparent text-white cursor-pointer">
                 <Menu />
               </Button>
             </SheetTrigger>
@@ -88,10 +63,15 @@ export default function Header() {
                   </li>
                 ))}
               </div>
+              <FaSearch
+                className={styles.searchIcon}
+                onClick={() => setIsSearching(!isSearching)}
+              />
             </SheetContent>
           </Sheet>
         </div>
-      </div>
+
+        <Link href="/dumbdream" className="text-xl absolute left-1/2 transform -translate-x-1/2">DUMB DREAM</Link>      </div>
 
       {isSearching && <Search placeholder="Search blogs..." />}
     </nav>

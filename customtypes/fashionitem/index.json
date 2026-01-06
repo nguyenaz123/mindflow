@@ -26,6 +26,27 @@
           "label": "Title",
           "placeholder": ""
         }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "description",
+          "placeholder": ""
+        }
+      },
+      "price": {
+        "type": "Number",
+        "config": {
+          "label": "price",
+          "placeholder": ""
+        }
+      },
+      "currency": {
+        "type": "Text",
+        "config": {
+          "label": "currency",
+          "placeholder": ""
+        }
       }
     }
   }
