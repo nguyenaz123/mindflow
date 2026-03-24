@@ -1,9 +1,9 @@
-import { TestPdf } from "@/components/testPDF/TestPdf";
+import MyPdf from "@/components/testPDF/MyPdf";
 
 export default async function Page() {
   return (
     <div>
-      <TestPdf />
+      <MyPdf />
     </div>
   );
 }
