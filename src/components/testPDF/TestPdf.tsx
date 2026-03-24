@@ -11,7 +11,7 @@ export const TestPdf = () => {
       <button onClick={() => setOpen(true)} className="text-white bg-white">
         Open Pdf
       </button>
-
+      -
       {open && (
         <div>
           <button
@@ -21,17 +21,15 @@ export const TestPdf = () => {
           >
             <X className="size-7 md:size-8" />
           </button>
-          <object
-            data="https://ska.oa.osim-martech.com/files/private/document/SG-DOC-1760684724_9_1761205061_MENVTb0mNT.pdf?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9za2Eub2Eub3NpbS1tYXJ0ZWNoLmNvbS9maWxlcy9wcml2YXRlL2RvY3VtZW50L1NHLURPQy0xNzYwNjg0NzI0XzlfMTc2MTIwNTA2MV9NRU5WVGIwbU5ULnBkZiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3NDMyNjYyOX19fV19&Signature=JecYf1VAcRbh%7eSmpyKLWrFFcHrF1uGvJlNbKQP0-jgfEAy9n29kgfKUlsbjgQYUNrKD9nr9dZTFKIm4IMcCSRnnGb0Z41SktV4QlFV9WlB3iNvrMrz6cmGizONWry09cX9CNztTSEqmv8w-tWA1IO7X9qkrzYdQAY5CmaEBSJynxyXbu8KXxo5KkLCt%7e7hf5YGoZsCjC%7e6Q7WOgqDV9DHPlmf6ZhB7pEP8fu0l6c5ngw3KYJJQ2R5XeGKnbGIzC6OH2PJ3oj%7eXBNUosD%7eGeBZ-DR5OSK2VFhNsoi8I8dYg01doh4HzlAyCmgSmOzPBi03jF9HbhGSiFnYYD8JXu9jQ__&Key-Pair-Id=K1TMO9RMMDST50"
-            type="application/pdf"
-            className="mt-2 h-[calc(100dvh-4.5rem)] w-full max-w-full"
-          >
-            <embed
-              src="https://ska.oa.osim-martech.com/files/private/document/SG-DOC-1760684724_9_1761205061_MENVTb0mNT.pdf?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9za2Eub2Eub3NpbS1tYXJ0ZWNoLmNvbS9maWxlcy9wcml2YXRlL2RvY3VtZW50L1NHLURPQy0xNzYwNjg0NzI0XzlfMTc2MTIwNTA2MV9NRU5WVGIwbU5ULnBkZiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3NDMyNjYyOX19fV19&Signature=JecYf1VAcRbh%7eSmpyKLWrFFcHrF1uGvJlNbKQP0-jgfEAy9n29kgfKUlsbjgQYUNrKD9nr9dZTFKIm4IMcCSRnnGb0Z41SktV4QlFV9WlB3iNvrMrz6cmGizONWry09cX9CNztTSEqmv8w-tWA1IO7X9qkrzYdQAY5CmaEBSJynxyXbu8KXxo5KkLCt%7e7hf5YGoZsCjC%7e6Q7WOgqDV9DHPlmf6ZhB7pEP8fu0l6c5ngw3KYJJQ2R5XeGKnbGIzC6OH2PJ3oj%7eXBNUosD%7eGeBZ-DR5OSK2VFhNsoi8I8dYg01doh4HzlAyCmgSmOzPBi03jF9HbhGSiFnYYD8JXu9jQ__&Key-Pair-Id=K1TMO9RMMDST50"
+          <div className="h-[90dvh] w-full overflow-y-auto overflow-x-hidden [-webkit-overflow-scrolling:touch]">
+            <object
+              data="https://ska.oa.osim-martech.com/files/private/document/SG-DOC-1760684724_9_1761205061_MENVTb0mNT.pdf?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9za2Eub2Eub3NpbS1tYXJ0ZWNoLmNvbS9maWxlcy9wcml2YXRlL2RvY3VtZW50L1NHLURPQy0xNzYwNjg0NzI0XzlfMTc2MTIwNTA2MV9NRU5WVGIwbU5ULnBkZiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3NDMzMDAxOX19fV19&Signature=bc%7e1pyXxI2HAHH85Xcjs3zpUjdAY8z5pJEt6jd8Ot7KkjQ6sHYXrH3Mw2XKu%7eo4oyiG2asNKP%7eYQHKfEMudSqCC%7eU3oR2V0m0hxfsYVlbS-TZohdCnrtGE8aPomu6VKiVkyyfLGdLwfnb0vZy6pfK%7eIDQHF%7et%7e4nz6btZBc1SOjHWoTXIKNb9dkdXHVZfVGeznxFzwWlanZpDQCy5%7eQTivd7Ng1Qd-ZqVdsA2MfQL5MAdRXnjDkmq4n3K1eCmUHEFECDEmBmigx4BTMudlmKjgfH2hlTx6%7eu4KybOmI0q4uTY811c-eJn3Jh8e7lJORrRTdGgZAFQhiSPAt74zp0ug__&Key-Pair-Id=K1TMO9RMMDST50"
               type="application/pdf"
-              className="mt-2 h-[calc(100dvh-4.5rem)] w-full max-w-full"
-            />
-          </object>
+              className="w-full h-[2000px]"
+            >
+              <p>Trình duyệt không hỗ trợ xem PDF. </p>
+            </object>
+          </div>
         </div>
       )}
     </>
