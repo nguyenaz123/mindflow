@@ -1,15 +1,3 @@
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: transparent;
-    z-index: 1000;
-    backdrop-filter: none;
-    padding-top: 10px;
-    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, backdrop-filter 0.5s ease-in-out;
-
-}
-
 .searchIcon {
     cursor: pointer;
     font-size: 18px;
@@ -22,94 +10,37 @@
 }
 
 .scrolled {
-    background-color: var(--foreground);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(6px);
+    background-color: white;
 }
 
-.scrolled li {
-    color: var(--background);
-
-}
-
-.navList {
-    display: flex;
-    max-width: 1300px;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.leftItems {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.navItem {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--foreground);
-    width: 100%;
-    max-width: fit-content;
-
-}
-
-.active {
-    border-bottom: 3px solid rgb(170, 169, 169);
-}
-
-.headerTitle {
-    display: none;
+.hamburger button {
+    padding: 10px;
 }
 
 .hamburger {
-    display: none;
+    display: block;
+    color: black;
+
 }
 
+.hamburgerClicked {
+    background-color: white;
 
-@media (max-width: 768px) {
+}
 
-    .navList {
-        display: none;
+.navListMobile {
+    padding: 0;
+    color: white;
 
-    }
+}
 
-    .scrolled {
-        background-color: white;
-    }
+.navListMobile li:hover {
+    background-color: lightgray;
+}
 
-    .hamburger button {
-        padding: 10px;
-    }
-
-    .hamburger {
-        display: block;
-        color: black;
-
-    }
-
-    .hamburgerClicked {
-        background-color: white;
-
-    }
-
-    .navListMobile {
-        padding: 0;
-        color: white;
-
-    }
-
-    .navListMobile li:hover {
-        background-color: lightgray;
-    }
-
-    .liMobile {
-        font-size: x-large;
-        padding: 5px 12px;
-        list-style-type: none
-    }
-
-
+.liMobile {
+    font-size: x-large;
+    padding: 5px 12px;
+    list-style-type: none;
+    cursor: pointer;
 }
